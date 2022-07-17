@@ -37,7 +37,7 @@ class AppCubit extends Cubit<AppsStates> {
     @required IconData icon,
   })
   {
-    isBottomShowDown= false;
+    isBottomShowDown= isShow;
     fabIcon= icon;
     emit(AppChangeBottomSheetState());
 
