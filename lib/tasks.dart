@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'cubit.dart';
 Widget buildTaskItem(Map model,context)=>Dismissible(
-  key:Key(model["id"].toString()),
+  key:Key(model["ID"].toString()),
   onDismissed:(direction)
   {
-    AppCubit.get(context).deleteDatabase(id:model["id"] );
+    AppCubit.get(context).deleteDatabase(id:model["ID"] );
   } ,
   child: Padding(
     padding: const EdgeInsets.all(20),
@@ -48,7 +48,7 @@ Widget buildTaskItem(Map model,context)=>Dismissible(
               {
                 AppCubit.get(context).updateDatabase(
                     status: "done",
-                    id:model["id"] );
+                    id:model["ID"] );
               }
           ),
           IconButton(icon:Icon(Icons.archive_outlined,
@@ -57,7 +57,7 @@ Widget buildTaskItem(Map model,context)=>Dismissible(
               {
                 AppCubit.get(context).updateDatabase(
                     status: "archive ",
-                    id:model["id"] );
+                    id:model["ID"] );
               }
           ),
         ]
